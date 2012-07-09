@@ -1,20 +1,17 @@
-Welcome to my dotfile config.
+Welcome
+-------
 
 The dotfiles.txt file contains a list of files and folders in this repo to be linked to the home directory.
 
-
-
-
 To link the files and folders specified in dotfiles.txt to the home directory, run:
 
-python manage.py link
-
-
-
+    python manage.py link
 
 To undo the link command, and restore any replaced files, run:
 
-python manage.py restore
+    python manage.py restore
 
+This project uses git flow. After cloning, run:
 
+    git flow init -d
 

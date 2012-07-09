@@ -1,6 +1,6 @@
-vim/.vim
-vim/.vimrc
-screen/.screenrc
-conky/.conkyrc
-bash/.bashrc
-pentadactyl/.pentadactylrc
+files/vim/.vim
+files/vim/.vimrc
+files/screen/.screenrc
+files/conky/.conkyrc
+files/bash/.bashrc
+files/pentadactyl/.pentadactylrc
