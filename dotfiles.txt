@@ -1,4 +1,6 @@
 vim/.vim
 vim/.vimrc
 screen/.screenrc
-git/.gitconfig
+conky/.conkyrc
+bash/.bashrc
+pentadactyl/.pentadactylrc
