@@ -29,17 +29,33 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+MY_GIT_AUTHOR_EMAIL="stephen@stephendaves.com"
+MY_GIT_AUTHOR_NAME="Stephen Daves"
+
+set_default_git_user() {
+    export GIT_AUTHOR_NAME=$MY_GIT_AUTHOR_NAME
+    export GIT_AUTHOR_EMAIL=$MY_GIT_AUTHOR_EMAIL
+}
+
+set_default_git_user
+
 #set git email based on remote path
 function cd()
 {
     builtin cd $@
     BRANCH=`git branch 2>/dev/null`
     if [ "$?" == "0" ]; then
-        WSERVER='p''l''a''n''s''w''i''f''t'
-        if [[ `git remote -v` =~ $WSERVER ]]; then
-            export GIT_AUTHOR_EMAIL="stephen@"$WSERVER".com"
-        else
-            export GIT_AUTHOR_EMAIL="stephen@stephendaves.com"
+        set_default_git_user
+
+        SERVER='p''l''a''n''s''w''i''f''t'
+        if [[ `git remote -v` =~ $SERVER ]]; then
+            export GIT_AUTHOR_EMAIL="stephen@"$SERVER".com"
         fi
+
+        SERVER='o''t''h''e''r''s''e''r''v''e''r'
+        if [[ `git remote -v` =~ $SERVER ]]; then
+            export GIT_AUTHOR_EMAIL="stephen@"$SERVER".com"
+        fi
+
     fi
 }
