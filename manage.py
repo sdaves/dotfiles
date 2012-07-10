@@ -3,18 +3,18 @@ This module is responsible for managing the setup and teardown of the
 dotfile config.
 '''
 
-
 __version__ = '1.0.1'
-
 
 import sys
 import os
+import shutil
 
 
 class DotFileConfig(object):
     '''
     Sets up and tears down your dotfile config.
     '''
+
     def __init__(self):
         os.chdir(os.path.abspath(os.path.dirname(__file__)))
 
@@ -73,7 +73,11 @@ class DotFileConfig(object):
                         os.path.join(destination_path, file_name),
                     )
 
-                    if os.path.isfile(to_path) or os.path.islink(to_path):
+                    new_path = os.path.join(self.backup_link_path, file_name)
+
+                    if os.path.isdir(to_path):
+                        shutil.move(to_path, new_path)
+                    elif os.path.isfile(to_path) or os.path.islink(to_path):
                         #backup link
                         os.link(
                             to_path,
@@ -110,20 +114,28 @@ class DotFileConfig(object):
                     os.path.join(destination_path, file_name),
                 )
 
-                if os.path.isfile(to_path) or os.path.islink(to_path):
-                    #backup link
-                    os.link(
+                new_path = os.path.join(self.backup_restore_path, file_name)
+
+                if os.path.isdir(to_path):
+                    #backup
+                    shutil.move(to_path, new_path)
+
+                    #restore dir
+                    shutil.copytree(
+                        os.path.join(self.backup_link_path, file_name),
                         to_path,
-                        os.path.join(self.backup_restore_path, file_name),
                     )
+                elif os.path.isfile(to_path) or os.path.islink(to_path):
+                    #backup link
+                    os.link(to_path, new_path)
 
                     #remove existing link
                     os.unlink(to_path)
 
-                os.link(
-                    os.path.join(self.backup_link_path, file_name),
-                    to_path,
-                )
+                    os.link(
+                        os.path.join(self.backup_link_path, file_name),
+                        to_path,
+                    )
 
 
 def main():
