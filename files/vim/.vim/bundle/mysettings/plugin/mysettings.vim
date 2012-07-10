@@ -2,7 +2,6 @@
 set nocompatible
 
 filetype off
-call pathogen#helptags()
 filetype plugin indent on
 syntax on
 
