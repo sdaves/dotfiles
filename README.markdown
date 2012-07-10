@@ -25,15 +25,17 @@ Development
     cd dotfiles
     git branch develop origin/develop
     git flow init -d    
-    echo Enter feature name \(only letters, numbers, spaces, and dashes allowed in name\):
-    read feature_name
+    echo && echo Enter feature name \(only letters, numbers, spaces, and dashes allowed\): && read feature_name
+
+Enter the name of your new awesome feature. Only letters, numbers, spaces, and dashes are allowed. Then run:
+
     git flow feature start $feature_name
-    
-Do some work here. Then run:
+
+All set! Now create your awesome feature. When you have finished committing all your changes, run:
 
     git flow feature finish $feature_name
 
-Push it up, and send me a merge request!
+The only thing left, is to push it up, and send me a merge request!
 
 Enjoy!
 ======
