@@ -3,7 +3,7 @@ This module is responsible for managing the setup and teardown of the
 dotfile config.
 '''
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 import sys
 import os
