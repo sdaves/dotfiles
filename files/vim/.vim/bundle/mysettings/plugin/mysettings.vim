@@ -108,12 +108,36 @@ let g:syntastic_python_checker='flake8'
 " maps
 nnoremap <leader>ev :vsplit ~/.vim/bundle/mysettings/plugin/mysettings.vim<cr>
 nnoremap <leader>sv :source ~/.vim/bundle/mysettings/plugin/mysettings.vim<cr>
+
 inoremap jk <esc>
+cnoremap jk <esc>
+vnoremap jk <esc>
+
+nnoremap <esc> <nop>
 inoremap <esc> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
+cnoremap <esc> <nop>
+vnoremap <esc> <nop>
+
+nnoremap <left> <nop>
+inoremap <left> <nop>
+cnoremap <left> <nop>
+vnoremap <left> <nop>
+
+nnoremap <right> <nop>
+inoremap <right> <nop>
+cnoremap <right> <nop>
+vnoremap <right> <nop>
+
+nnoremap <up> <nop>
+inoremap <up> <nop>
+cnoremap <up> <nop>
+vnoremap <up> <nop>
+
+nnoremap <down> <nop>
+inoremap <down> <nop>
+cnoremap <down> <nop>
+vnoremap <down> <nop>
+
 onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
@@ -131,3 +155,6 @@ au FileType javascript nnoremap <buffer> <localleader>c I//
 au FileType python     nnoremap <buffer> <localleader>c I#
 au BufLeave,FocusLost * silent! wall
 augroup END
+
+" autocomplete settings
+let g:acp_behaviorKeywordLength=1
