@@ -112,7 +112,6 @@ inoremap jk <esc>
 cnoremap jk <esc>
 vnoremap jk <esc>
 
-nnoremap <esc> <nop>
 inoremap <esc> <nop>
 cnoremap <esc> <nop>
 vnoremap <esc> <nop>
