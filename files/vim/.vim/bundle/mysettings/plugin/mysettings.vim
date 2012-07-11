@@ -179,6 +179,8 @@ noremap L $
 
 map <leader>c <c-_><c-_>
 
+map <leader>f :CtrlP<cr>
+
 " autocommands
 augroup all_aus
 au!
