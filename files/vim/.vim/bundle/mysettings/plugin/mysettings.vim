@@ -5,6 +5,24 @@ filetype off
 filetype plugin indent on
 syntax on
 
+" functions
+
+" From http://vimcasts.org/episodes/tidying-whitespace/
+" Preserves/Saves the state, executes a command, and returns to the saved state
+" Modified from http://vimbits.com/bits/231
+" Remove trailing whitespace on save
+function! Preserve(command)
+" Save last search, and cursor position.
+let _s=@/
+let l = line(".")
+let c = col(".")
+" Do the business:
+execute a:command
+" Clean up: restore previous search history, and cursor position
+let @/=_s
+call cursor(l, c)
+endfunction
+
 set t_Co=256
 let mapleader=","
 let maplocalleader = "\\"
@@ -112,7 +130,6 @@ inoremap jk <esc>
 cnoremap jk <esc>
 vnoremap jk <esc>
 
-nnoremap <esc> <nop>
 inoremap <esc> <nop>
 cnoremap <esc> <nop>
 vnoremap <esc> <nop>
@@ -149,9 +166,16 @@ nnoremap ; :
 
 nmap <leader>p <M-p>
 nmap <leader>P <M-P>
+nmap <leader>w <Bslash><Bslash>w
+nmap <leader>b <Bslash><Bslash>b
+
+nnoremap <leader>g :Gstatus<cr>
 
 vnoremap < <gv
 vnoremap > >gv
+
+noremap H ^
+noremap L $
 
 " autocommands
 augroup all_aus
@@ -161,6 +185,8 @@ au FileType python     nnoremap <buffer> <localleader>c I#
 au BufLeave,FocusLost * silent! wall
 au ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au BufEnter,InsertLeave * match ExtraWhitespace /\s\+$/
+"strip all trailing white space
+au BufWrite * call Preserve("%s/\\s\\+$//e")
 augroup END
 
 " autocomplete settings
