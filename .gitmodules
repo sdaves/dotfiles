@@ -25,3 +25,6 @@
 [submodule "files/vim/.vim/bundle/vim-css-color"]
 	path = files/vim/.vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
+[submodule "files/vim/.vim/bundle/minbufexpl"]
+	path = files/vim/.vim/bundle/minbufexpl
+	url = https://github.com/fholgado/minibufexpl.vim
