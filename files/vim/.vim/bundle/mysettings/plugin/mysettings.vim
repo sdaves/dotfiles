@@ -181,6 +181,8 @@ map <leader>c <c-_><c-_>
 
 map <leader>f :CtrlP<cr>
 
+map <leader>m <Bslash>mbe
+
 " autocommands
 augroup all_aus
 au!
