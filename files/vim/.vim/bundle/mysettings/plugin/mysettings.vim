@@ -1,14 +1,14 @@
-" vim builtin settings
+" Vim builtin settings
 set nocompatible
 
 filetype off
 filetype plugin indent on
 syntax on
 
-colorscheme zenburn
 set t_Co=256
 let mapleader=","
 let maplocalleader = "\\"
+set statusline=\ %f%m%r%h%w\ %=%({%{fugitive#statusline()}\|%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
@@ -147,13 +147,24 @@ nnoremap <tab> %
 vnoremap <tab> %
 nnoremap ; :
 
+nmap <leader>p <M-p>
+nmap <leader>P <M-P>
+
+vnoremap < <gv
+vnoremap > >gv
+
 " autocommands
 augroup all_aus
 au!
 au FileType javascript nnoremap <buffer> <localleader>c I//
 au FileType python     nnoremap <buffer> <localleader>c I#
 au BufLeave,FocusLost * silent! wall
+au ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au BufEnter,InsertLeave * match ExtraWhitespace /\s\+$/
 augroup END
 
 " autocomplete settings
 let g:acp_behaviorKeywordLength=1
+
+" colorscheme
+colorscheme zenburn
