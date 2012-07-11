@@ -5,6 +5,24 @@ filetype off
 filetype plugin indent on
 syntax on
 
+" functions
+
+" From http://vimcasts.org/episodes/tidying-whitespace/
+" Preserves/Saves the state, executes a command, and returns to the saved state
+" Modified from http://vimbits.com/bits/231
+" Remove trailing whitespace on save
+function! Preserve(command)
+" Save last search, and cursor position.
+let _s=@/
+let l = line(".")
+let c = col(".")
+" Do the business:
+execute a:command
+" Clean up: restore previous search history, and cursor position
+let @/=_s
+call cursor(l, c)
+endfunction
+
 set t_Co=256
 let mapleader=","
 let maplocalleader = "\\"
@@ -57,6 +75,102 @@ set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
 set cmdheight=2                 " use a status bar that is 2 rows high
 
+" Vim behaviour {{{
+set hidden                      " hide buffers instead of closing them this
+                                "    means that the current buffer can be put
+                                "    to background without being written; and
+                                "    that marks and undo history are preserved
+set switchbuf=useopen           " reveal already opened files from the
+                                " quickfix window instead of opening new
+                                " buffers
+set history=1000                " remember more commands and search history
+set undolevels=1000             " use many muchos levels of undo
+if v:version >= 730
+    set undofile                " keep a persistent backup file
+    set undodir=~/.vim/.undo,~/tmp,/tmp
+endif
+set nobackup                    " do not keep backup files, it's 70's style cluttering
+set noswapfile                  " do not write annoying intermediate swap files,
+                                "    who did ever restore from swap files anyway?
+set directory=~/.vim/.tmp,~/tmp,/tmp
+                                " store swap files in one of these directories
+                                "    (in case swapfile is ever turned on)
+set viminfo='20,\"80            " read/write a .viminfo file, don't store more
+                                "    than 80 lines of registers
+set wildmenu                    " make tab completion for files/buffers act like bash
+set wildmode=list:full          " show a list when pressing tab and complete
+                                "    first full match
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                       " change the terminal's title
+set visualbell                  " don't beep
+set noerrorbells                " don't beep
+set showcmd                     " show (partial) command in the last line of the screen
+                                "    this also shows visual selection info
+set nomodeline                  " disable mode lines (security measure)
+"set ttyfast                     " always use a fast terminal
+set cursorline                  " underline the current line, for quick orientation
+set modelines=0
+set relativenumber
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+" syntastic settings
+let g:syntastic_auto_jump=1
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_python_checker='flake8'
+
+" maps
+nnoremap <leader>ev :vsplit ~/.vim/bundle/mysettings/plugin/mysettings.vim<cr>
+nnoremap <leader>sv :source ~/.vim/bundle/mysettings/plugin/mysettings.vim<cr>
+
+inoremap jk <esc>
+cnoremap jk <esc>
+vnoremap jk <esc>
+
+inoremap <esc> <nop>
+cnoremap <esc> <nop>
+vnoremap <esc> <nop>
+
+nnoremap <left> <nop>
+inoremap <left> <nop>
+cnoremap <left> <nop>
+vnoremap <left> <nop>
+
+nnoremap <right> <nop>
+inoremap <right> <nop>
+cnoremap <right> <nop>
+vnoremap <right> <nop>
+
+nnoremap <up> <nop>
+inoremap <up> <nop>
+cnoremap <up> <nop>
+vnoremap <up> <nop>
+
+nnoremap <down> <nop>
+inoremap <down> <nop>
+cnoremap <down> <nop>
+vnoremap <down> <nop>
+
+onoremap p i(
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+nnoremap ; :
+
+nmap <leader>p <M-p>
+nmap <leader>P <M-P>
+
+vnoremap < <gv
+vnoremap > >gv
+
+" autocommands
 augroup all_aus
 au!
 au FileType javascript nnoremap <buffer> <localleader>c I//
