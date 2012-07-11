@@ -177,6 +177,8 @@ vnoremap > >gv
 noremap H ^
 noremap L $
 
+map <leader>c <c-_><c-_>
+
 " autocommands
 augroup all_aus
 au!

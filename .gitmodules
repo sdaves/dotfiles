@@ -13,3 +13,6 @@
 [submodule "files/vim/.vim/bundle/easymotion"]
 	path = files/vim/.vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "files/vim/.vim/bundle/tcomment"]
+	path = files/vim/.vim/bundle/tcomment
+	url = http://github.com/tomtom/tcomment_vim
