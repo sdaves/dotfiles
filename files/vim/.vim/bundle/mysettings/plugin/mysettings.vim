@@ -181,6 +181,8 @@ map <leader>c <c-_><c-_>
 
 map <leader>f :CtrlP<cr>
 
+map <leader>m <Bslash>mbe
+
 " autocommands
 augroup all_aus
 au!
@@ -198,3 +200,10 @@ let g:acp_behaviorKeywordLength=1
 
 " colorscheme
 colorscheme zenburn
+
+" minbufexpl
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
