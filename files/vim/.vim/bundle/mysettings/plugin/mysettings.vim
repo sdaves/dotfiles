@@ -166,9 +166,16 @@ nnoremap ; :
 
 nmap <leader>p <M-p>
 nmap <leader>P <M-P>
+nmap <leader>w <Bslash><Bslash>w
+nmap <leader>b <Bslash><Bslash>b
+
+nnoremap <leader>g :Gstatus<cr>
 
 vnoremap < <gv
 vnoremap > >gv
+
+noremap H ^
+noremap L $
 
 " autocommands
 augroup all_aus
@@ -187,6 +194,3 @@ let g:acp_behaviorKeywordLength=1
 
 " colorscheme
 colorscheme zenburn
-
-" easymotion
-let g:EasyMotion_leader_key = ','
