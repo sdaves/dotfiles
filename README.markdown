@@ -7,8 +7,7 @@ Setup
 -----
 
     git clone https://github.com/sdaves/dotfiles.git --recursive
-    cd dotfiles
-    python manage.py link
+    python dotfiles/manage.py link
     source ~/.bashrc
 
 Cleanup
