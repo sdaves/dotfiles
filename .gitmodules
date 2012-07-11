@@ -19,3 +19,9 @@
 [submodule "files/vim/.vim/bundle/ctrlp"]
 	path = files/vim/.vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "files/vim/.vim/bundle/tagbar"]
+	path = files/vim/.vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "files/vim/.vim/bundle/vim-css-color"]
+	path = files/vim/.vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
