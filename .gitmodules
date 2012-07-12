@@ -34,3 +34,6 @@
 [submodule "files/vim/.vim/bundle/gundo"]
 	path = files/vim/.vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "files/vim/.vim/bundle/conque-term"]
+	path = files/vim/.vim/bundle/conque-term
+	url = https://github.com/rosenfeld/conque-term.git
