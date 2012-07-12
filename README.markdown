@@ -6,35 +6,35 @@ Herein livith mine dotfiles.
 Setup
 -----
 
-    git clone https://github.com/sdaves/dotfiles.git --recursive
-    python dotfiles/manage.py link
-    source ~/.bashrc
+    git clone --recursive https://github.com/sdaves/dotfiles.git
+    python dotfiles/manage.py link && source ~/.bashrc
 
 Cleanup
 -------
 
 To undo the link command, and restore any replaced files, run:
 
-    python manage.py restore
+    python dotfiles/manage.py restore
 
 Development
 -----------
 
-    git clone https://github.com/sdaves/dotfiles.git --recursive
-    cd dotfiles
-    git branch develop origin/develop
-    git flow init -d    
-    echo && echo Enter feature name \(only letters, numbers, spaces, and dashes allowed\): && read feature_name
+Hit the "Fork" button located in the top right of this github page. Clone your new
+repo by running:
 
-Enter the name of your new awesome feature. Only letters, numbers, spaces, and dashes are allowed. Then run:
+    git clone --recursive YOUR-URL
 
-    git flow feature start $feature_name
+Replace YOUR-URL with the url of your fork. Then run:
 
-All set! Now create your awesome feature. When you have finished committing all your changes, run:
+    cd dotfiles && git branch develop origin/develop && git flow init -d
+    git flow feature start YOUR-FEATURE-NAME
 
-    git flow feature finish $feature_name
+Just remember to replace YOUR-FEATURE-NAME with the name of your new feature (no spaces are allowed). Now create your awesome feature! When you have finished committing all your changes, run:
 
-The only thing left, is to push it up, and send me a merge request!
+    git flow feature finish YOUR-FEATURE-NAME
+    git flow feature publish YOUR-FEATURE-NAME
+
+Now just send me a pull request for your feature branch, and your done!
 
 Enjoy!
 ======
