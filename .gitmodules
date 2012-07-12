@@ -28,3 +28,18 @@
 [submodule "files/vim/.vim/bundle/minbufexpl"]
 	path = files/vim/.vim/bundle/minbufexpl
 	url = https://github.com/fholgado/minibufexpl.vim
+[submodule "files/vim/.vim/bundle/pathogen"]
+	path = files/vim/.vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "files/vim/.vim/bundle/gundo"]
+	path = files/vim/.vim/bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
+[submodule "files/vim/.vim/bundle/conque-term"]
+	path = files/vim/.vim/bundle/conque-term
+	url = https://github.com/rosenfeld/conque-term.git
+[submodule "files/vim/.vim/bundle/AutoComplPop"]
+	path = files/vim/.vim/bundle/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop
+[submodule "files/vim/.vim/bundle/L9"]
+	path = files/vim/.vim/bundle/L9
+	url = https://github.com/vim-scripts/L9
