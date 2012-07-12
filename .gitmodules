@@ -40,3 +40,6 @@
 [submodule "files/vim/.vim/bundle/AutoComplPop"]
 	path = files/vim/.vim/bundle/AutoComplPop
 	url = https://github.com/vim-scripts/AutoComplPop
+[submodule "files/vim/.vim/bundle/L9"]
+	path = files/vim/.vim/bundle/L9
+	url = https://github.com/vim-scripts/L9
