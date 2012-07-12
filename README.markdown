@@ -31,7 +31,6 @@ Replace YOUR-URL with the url of your fork. Then run:
 
 Just remember to replace YOUR-FEATURE-NAME with the name of your new feature (no spaces are allowed). Now create your awesome feature! When you have finished committing all your changes, run:
 
-    git flow feature finish YOUR-FEATURE-NAME
     git flow feature publish YOUR-FEATURE-NAME
 
 Now just send me a pull request for your feature branch, and your done!
