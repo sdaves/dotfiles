@@ -37,3 +37,6 @@
 [submodule "files/vim/.vim/bundle/conque-term"]
 	path = files/vim/.vim/bundle/conque-term
 	url = https://github.com/rosenfeld/conque-term.git
+[submodule "files/vim/.vim/bundle/AutoComplPop"]
+	path = files/vim/.vim/bundle/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop
