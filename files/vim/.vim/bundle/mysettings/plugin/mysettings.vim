@@ -177,6 +177,9 @@ vnoremap > >gv
 noremap H ^
 noremap L $
 
+noremap j gj
+noremap k gk
+
 noremap <leader>h :bp<cr>
 noremap <leader>l :bn<cr>
 
