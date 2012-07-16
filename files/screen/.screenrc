@@ -1,3 +1,13 @@
+startup_message off
+defscrollback 1000
+defmonitor on
+activity "<%n>"
+silencewait 15
+bell_msg "! (%n)"
+vbell_msg "! (%n)"
+autodetach on
+defutf8 on
+hardstatus alwayslastline "%{=b}%{G} : %{b}%w %=%{kG}%C%A"
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce "on"
