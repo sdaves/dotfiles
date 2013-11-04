@@ -1,0 +1,10 @@
+{
+  "port": 1111,
+  "hostname": "127.0.0.1",
+  "log": true,
+  "term": {
+    "termName": "xterm",
+    "scrollback": 1000
+  },
+  "localOnly": false
+}
