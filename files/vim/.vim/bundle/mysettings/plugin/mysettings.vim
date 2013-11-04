@@ -6,6 +6,20 @@ filetype plugin indent on
 syntax on
 
 " functions
+let dorefresh = 0
+function! CheckForRefresh()
+  if g:dorefresh == 1
+    silent write
+    silent !webrf refresh &
+    SyntasticCheck
+  endif
+endfunction
+
+function! HandleBlur()
+  if g:dorefresh == 1
+    SyntasticCheck
+  endif
+endfunction
 
 " From http://vimcasts.org/episodes/tidying-whitespace/
 " Preserves/Saves the state, executes a command, and returns to the saved state
@@ -29,10 +43,10 @@ let maplocalleader = "\\"
 set statusline=\ %f%m%r%h%w\ %=%({%{fugitive#statusline()}\|%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
-set tabstop=4                   " a tab is four spaces
-set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
+set tabstop=2                   " a tab is four spaces
+set softtabstop=2               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=4                " number of spaces to use for autoindenting
+set shiftwidth=2                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
@@ -117,10 +131,13 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 " syntastic settings
-let g:syntastic_auto_jump=1
+let g:syntastic_auto_jump=0
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checker='flake8'
+" let g:syntastic_cucumber_checker='flake8'
 
 " maps
 nnoremap <leader>ev :vsplit ~/.vim/bundle/mysettings/plugin/mysettings.vim<cr>
@@ -134,7 +151,6 @@ inoremap <esc> <nop>
 cnoremap <esc> <nop>
 vnoremap <esc> <nop>
 
-nnoremap <left> <nop>
 inoremap <left> <nop>
 cnoremap <left> <nop>
 vnoremap <left> <nop>
@@ -189,16 +205,24 @@ map <leader>f :CtrlP<cr>
 
 map <leader>m <Bslash>mbe
 
+map <leader>r :let dorefresh = 1<cr>
+map <leader>R :let dorefresh = 0<cr>
+
+map <C-J> <C-W>j
+
 " autocommands
 augroup all_aus
 au!
 au FileType javascript nnoremap <buffer> <localleader>c I//
 au FileType python     nnoremap <buffer> <localleader>c I#
-au BufLeave,FocusLost * silent! wall
+au BufLeave,FocusLost * call HandleBlur()
 au ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au BufEnter,InsertLeave * match ExtraWhitespace /\s\+$/
 "strip all trailing white space
 au BufWrite * call Preserve("%s/\\s\\+$//e")
+au CursorHold * call CheckForRefresh()
+au CursorHoldI * call CheckForRefresh()
+au BufRead,BufNewFile *.coffee,*.litcoffee set filetype=coffee
 augroup END
 
 " autocomplete settings

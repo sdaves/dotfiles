@@ -1,4 +1,5 @@
 #bash
+alias rm=trash-put
 set -o vi
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
 HISTCONTROL=ignoreboth
@@ -59,3 +60,6 @@ function cd()
 
     fi
 }
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
