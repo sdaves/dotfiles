@@ -1,51 +1,51 @@
 [submodule "files/vim/.vim/bundle/syntastic"]
 	path = files/vim/.vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "files/vim/.vim/bundle/Zenburn"]
 	path = files/vim/.vim/bundle/Zenburn
-	url = https://github.com/vim-scripts/Zenburn.git
+	url = git://github.com/vim-scripts/Zenburn.git
 [submodule "files/vim/.vim/bundle/yankstack"]
 	path = files/vim/.vim/bundle/yankstack
-	url = https://github.com/vim-scripts/yankstack.git
+	url = git://github.com/vim-scripts/yankstack.git
 [submodule "files/vim/.vim/bundle/fugitive"]
 	path = files/vim/.vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "files/vim/.vim/bundle/easymotion"]
 	path = files/vim/.vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "files/vim/.vim/bundle/tcomment"]
 	path = files/vim/.vim/bundle/tcomment
-	url = http://github.com/tomtom/tcomment_vim
+	url = git://github.com/tomtom/tcomment_vim.git
 [submodule "files/vim/.vim/bundle/ctrlp"]
 	path = files/vim/.vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
+	url = git://github.com/kien/ctrlp.vim.git
 [submodule "files/vim/.vim/bundle/tagbar"]
 	path = files/vim/.vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
 [submodule "files/vim/.vim/bundle/vim-css-color"]
 	path = files/vim/.vim/bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
+	url = git://github.com/ap/vim-css-color.git
 [submodule "files/vim/.vim/bundle/minbufexpl"]
 	path = files/vim/.vim/bundle/minbufexpl
-	url = https://github.com/fholgado/minibufexpl.vim
+	url = git://github.com/fholgado/minibufexpl.vim.git
 [submodule "files/vim/.vim/bundle/pathogen"]
 	path = files/vim/.vim/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
 [submodule "files/vim/.vim/bundle/gundo"]
 	path = files/vim/.vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
 [submodule "files/vim/.vim/bundle/conque-term"]
 	path = files/vim/.vim/bundle/conque-term
-	url = https://github.com/rosenfeld/conque-term.git
+	url = git://github.com/rosenfeld/conque-term.git
 [submodule "files/vim/.vim/bundle/AutoComplPop"]
 	path = files/vim/.vim/bundle/AutoComplPop
-	url = https://github.com/vim-scripts/AutoComplPop
+	url = git://github.com/vim-scripts/AutoComplPop.git
 [submodule "files/vim/.vim/bundle/L9"]
 	path = files/vim/.vim/bundle/L9
-	url = https://github.com/vim-scripts/L9
+	url = git://github.com/vim-scripts/L9.git
 [submodule "files/vim/.vim/bundle/vim-coffee-script"]
 	path = files/vim/.vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
 [submodule "files/vim/.vim/bundle/brolink"]
 	path = files/vim/.vim/bundle/brolink
-	url = https://github.com/jaxbot/brolink.vim
+	url = git://github.com/jaxbot/brolink.vim.git
