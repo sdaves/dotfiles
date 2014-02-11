@@ -210,7 +210,7 @@ map <leader>R :let dorefresh = 0<cr>
 
 map <C-J> <C-W>j
 
-map <leader>m :make<cr>
+map <leader>m :!make<cr>
 
 " autocommands
 augroup all_aus
