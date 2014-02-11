@@ -46,3 +46,6 @@
 [submodule "files/vim/.vim/bundle/vim-coffee-script"]
 	path = files/vim/.vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "files/vim/.vim/bundle/brolink"]
+	path = files/vim/.vim/bundle/brolink
+	url = git://github.com/jaxbot/brolink.vim.git
