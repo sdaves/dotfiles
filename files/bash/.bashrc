@@ -1,4 +1,5 @@
 #bash
+export EDITOR=vim
 alias rm=trash-put
 set -o vi
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
